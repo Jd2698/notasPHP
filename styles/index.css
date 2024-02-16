@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui;
+    font-size: 20px;
+}
+
+body {
+    user-select: none;
+    min-height: 100vh;
+    background: rgb(55, 58, 63);
+
+    display: grid;
+    place-items: center;
+}
+
+.login-error {
+    color: white;
+    position: absolute;
+    bottom: -60px;
+    width: 600px;
+    text-align: center;
+    background: rgba(188, 109, 109, 0.58);
+    border-radius: 8px;
+    padding: 7px 0;
+
+    animation: opacity 2200ms ease-in-out forwards;
+}
+
+@keyframes opacity {
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+#form-login {
+    position: relative;
+    width: 600px;
+    height: 320px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 2px rgb(96, 100, 110);
+
+    display: flex;
+}
+
+#form-login input[type="submit"] {
+    background: #4e9a64;
+    color: #fff;
+    padding: 5px 0;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+
+    transition: background 100ms linear;
+}
+
+#form-login input[type="submit"]:focus,
+#form-login input[type="submit"]:hover {
+    outline: none;
+    background: #5bb074;
+}
+
+#form-login .form__left {
+    color: #fff;
+    width: 55%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#form-login .form__right {
+    color: #fff;
+    width: 45%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 30px;
+    padding: .5rem .8rem;
+}
+
+.form__left img {
+    height: 75%;
+}
+
+.form__right .group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.form__right .group input {
+    font-size: .9rem;
+    border: none;
+    border-radius: 3px;
+    padding: 4px 4px;
+    text-align: center;
+
+    background: #ddd;
+}
+
+.form__right .group input:focus {
+    outline: none;
+    background: #fff;
+}
+
+@media (max-width: 720px) {
+    #form-login{
+        padding: 20px 0;
+        width: 350px;
+        height: min-content;
+        flex-direction: column;
+        align-items: center;
+        justify-content: stretch;
+    }
+    .form__left img{
+        height: 200px;
+    }
+    #form-login .form__left{
+        width: 90%;
+    }
+    #form-login .form__right{
+        width: 90%;
+    }
+}
